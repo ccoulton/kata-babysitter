@@ -1,3 +1,4 @@
+import sys
 '''
 - Family A pays $15 per hour before 11pm, and $20 per hour the rest of the night
 - Family B pays $12 per hour before 10pm, $8 between 10 and 12, and $16 the rest of the night
@@ -97,18 +98,21 @@ def main():
             try:
                 temp_start = int(input("Please enter your start time: "))
                 temp_end = int(input("Please enter your end time: "))
-                shifts[0].CreateShift(temp_start, temp_end)
+                shift.CreateShift(temp_start, temp_end)
             except NameError:
                 print("A value you entered was not a whole number")
             except:
                 print("Something went wrong please report this to:")
                 print("https://github.com/ccoulton/kata-babysitter")
         print("Thank You for your input")
-        while shift._shiftFamily == '':
+        while shift._shiftFamily is '':
             try:
-                shift.SetFamily(char(input("Please enter the family you worked for(A,B,C): ")))
-            except NameError:
-                print("Value you entered was not valid please try again")
+                print "Please enter the family you worked for(A,B,C): "
+                temp_family = sys.stdin.read(1)
+                shift.SetFamily(temp_family)
+            except:
+                print "Family Value was invalid please try again."
+        print "Please request ", shift.CalculateInvoice(), "$ for that time worked for that family."
 
 if __name__ == '__main__':
     main()
