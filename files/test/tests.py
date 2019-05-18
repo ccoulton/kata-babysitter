@@ -44,6 +44,9 @@ class BabySitterTimeTest(unittest.TestCase):
             self.assertEqual(self._clock._shiftFamily, test_Values[key])
 
     def testCalculateShiftValue(self):
-        pass
+        self._clock.CreateShift(17,18)
+        self._clock.SetFamily('A')
+        self.assertEqual(self._clock.CalculateInvoice(), 15)
+
 if __name__ == '__main__':
     unittest.main()
