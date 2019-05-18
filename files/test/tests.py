@@ -39,7 +39,7 @@ class BabySitterTimeTest(unittest.TestCase):
 
     def testSetFamily(self):
         self._clock.SetFamily('A')
-        self.assetEqual(self._clock._shiftFamily, 'A')
+        self.assertEqual(self._clock._shiftFamily, 'A')
 
 if __name__ == '__main__':
     unittest.main()
