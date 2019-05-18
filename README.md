@@ -13,8 +13,8 @@ The babysitter:
 - starts no earlier than 5:00PM *done*
 - leaves no later than 4:00AM *done*
 - only babysits for one family per night
-- gets paid for full hours (no fractional hours)
-- should be prevented from mistakes when entering times (e.g. end time before start time, or outside of allowable work hours)
+- gets paid for full hours (no fractional hours) *done?* (disallows fractional hours currently)
+- should be prevented from mistakes when entering times (e.g. end time before start time, or outside of allowable work hours) *done*
 
 The job:
 - Pays different rates for each family (based on bedtimes, kids and pets, etc...)
@@ -31,5 +31,4 @@ Directions:
 To run unit tests run python /files/test/tests.py from the root directory,
 -v is for a more verbose version of the output.
 
-To use application run python /files/src/babysittertime.py from root
-directory.
+To use application run python /files/src/babysittertime.py from root directory.
