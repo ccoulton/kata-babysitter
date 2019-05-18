@@ -1,5 +1,11 @@
-class BabySitterTimeTest:
-    _clock = None
-    def __init__(self):
-        execfile("../src/babysittertime")
-        self._clock = BabySitterTime()
+import unittest
+import sys
+sys.path.insert(0, '../src')
+from babysittertime import BabySitterTime
+
+class BabySitterTimeTest(unittest.TestCase):
+    _clock = BabySitterTime()
+
+
+if __name__ == '__main__':
+    unittest.main()
