@@ -19,6 +19,7 @@ class BabySitterTime:
 
     def SetFamily(self, fam):
         if fam not in _famDict.keys():
+            self._shiftFamily = ''
             return
         self._shiftFamily = fam
 
