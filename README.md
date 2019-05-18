@@ -10,8 +10,8 @@ I want to calculate my nightly charge<br>*
 
 ## Requirements
 The babysitter:
-- starts no earlier than 5:00PM
-- leaves no later than 4:00AM
+- starts no earlier than 5:00PM *done*
+- leaves no later than 4:00AM *done*
 - only babysits for one family per night
 - gets paid for full hours (no fractional hours)
 - should be prevented from mistakes when entering times (e.g. end time before start time, or outside of allowable work hours)
@@ -25,3 +25,11 @@ The job:
 
 Deliverable:
 - Calculate total pay, based on babysitter start and end time, and a family.
+
+Directions:
+
+To run unit tests run python /files/test/tests.py from the root directory,
+-v is for a more verbose version of the output.
+
+To use application run python /files/src/babysittertime.py from root
+directory.
