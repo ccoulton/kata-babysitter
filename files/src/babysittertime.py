@@ -46,13 +46,9 @@ class BabySitterTime:
             return False
 
     def CreateShift(self, start, end):
-        if self.StartTime(start) and self.EndTime(end):
-            if start <4:
-                start += 24
-            if end < 5:
-                end += 24
-            return start < end
-        return False
+        if not self.StartTime(start) or not self.EndTime(end):
+            return False
+        return self.ValidShift()
     #alternitvly you could throw an exception when values are not correct
     #allowing for input to be put in a try block in application.
 
