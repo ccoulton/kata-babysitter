@@ -3,18 +3,25 @@
 - Family B pays $12 per hour before 10pm, $8 between 10 and 12, and $16 the rest of the night
 - Family C pays $21 per hour before 9pm, then $15 the rest of the night
 '''
+#fam,from 5-6,  6-7,  7-8,   8-9,   9-10,  10-11, 11-12, 12-1,  1-2, 2-3,  3-4
+_famA = {17:15, 18:15, 19:15, 20:15, 21:15, 22:15, 23:20, 0:20, 1:20, 2:20, 3:20}
+_famB = {17:12, 18:12, 19:12, 20:12, 21:12, 22:8,  23:8,  0:16, 1:16, 2:16, 3:16}
+_famC = {17:21, 18:21, 19:21, 20:21, 21:15, 22:15, 23:15, 0:15, 1:15, 2:15, 3:15}
+_famDict = {'A':_famA, 'B':_famB, 'C':_famC}
+
 class BabySitterTime:
-    #fam,from 5-6,  6-7,  7-8,   8-9,   9-10,  10-11, 11-12, 12-1,  1-2, 2-3,  3-4
-    _famA = {17:15, 18:15, 19:15, 20:15, 21:15, 22:15, 23:20, 0:20, 1:20, 2:20, 3:20}
-    _famB = {17:12, 18:12, 19:12, 20:12, 21:12, 22:8,  23:8,  0:16, 1:16, 2:16, 3:16}
-    _famC = {17:21, 18:21, 19:21, 20:21, 21:15, 22:15, 23:15, 0:15, 1:15, 2:15, 3:15}
-    _famDict = {'A':_famA, 'B':_famB, 'C':_famC}
+    _shiftFamily = ''
     _startTime = None
     _endTime = None
     def __init__(self):
         self._startTime = 0
         self._endTime = 0
 
+    def SetFamily(self, fam):
+        if fam != 'A' or fam != 'B' or fam != 'C':
+            return
+        self._shiftFamily = fam
+    
     @property
     def StartTime(self):
         return self._startTime
