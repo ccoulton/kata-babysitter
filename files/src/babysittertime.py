@@ -68,11 +68,12 @@ class BabySitterTime:
 def main():
     shifts = {}
     numOfShifts = -1
-    while -1 <= numOfShifts:
+    while numOfShifts < 0:
         try:
             numOfShifts = int(input("Please enter a whole number of shifts you wish to calcluate: "))
         except NameError:
             print("That is not a valid positive whole number")
+            numOfShifts = -1
     for index in xrange(0, numOfShifts):
         shifts[index] = BabySitterTime()
     print("Times to be inserted in 24 hour clock times, rounded to nearest hour")
