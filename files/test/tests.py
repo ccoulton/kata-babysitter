@@ -1,6 +1,5 @@
-import "src/babysittertime"
-
 class BabySitterTimeTest:
-    _BabySitterTime clock
+    _clock = None
     def __init__(self):
-        clock = BabySitterTime
+        execfile("../src/babysittertime")
+        self._clock = BabySitterTime()
