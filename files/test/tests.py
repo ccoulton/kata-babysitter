@@ -14,6 +14,13 @@ class BabySitterTimeTest(unittest.TestCase):
         self.assertTrue(self._clock.EndTime(4))
         self.assertFalse(self._clock.EndTime(5))
 
+    def testValidTimesSet(self):
+        self.assertFalse(self._clock.StartTime(25))
+        self.assertFalse(self._clock.EndTime(25))
+
+    def testTimesAreValid(self):
+        self.assertTrue(self._clock.CreateShift(17, 4))
+
 
 if __name__ == '__main__':
     unittest.main()
