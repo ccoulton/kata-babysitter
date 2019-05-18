@@ -18,10 +18,10 @@ class BabySitterTime:
         self._endTime = 0
 
     def SetFamily(self, fam):
-        if fam != 'A' or fam != 'B' or fam != 'C':
+        if fam not in _famDict.keys():
             return
         self._shiftFamily = fam
-    
+
     @property
     def StartTime(self):
         return self._startTime
