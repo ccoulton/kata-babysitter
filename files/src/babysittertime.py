@@ -93,6 +93,11 @@ def main():
                 print("Something went wrong please report this to:")
                 print("https://github.com/ccoulton/kata-babysitter")
         print("Thank You for your input")
+        while shift._shiftFamily == '':
+            try:
+                shift.SetFamily(char(input("Please enter the family you worked for(A,B,C): ")))
+            except NameError:
+                print("Value you entered was not valid please try again")
 
 if __name__ == '__main__':
     main()
