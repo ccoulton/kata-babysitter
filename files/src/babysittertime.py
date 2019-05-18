@@ -4,18 +4,28 @@
 - Family C pays $21 per hour before 9pm, then $15 the rest of the night
 '''
 #fam,from 5-6,  6-7,  7-8,   8-9,   9-10,  10-11, 11-12, 12-1,  1-2, 2-3,  3-4
-_famA = {17:15, 18:15, 19:15, 20:15, 21:15, 22:15, 23:20, 0:20, 1:20, 2:20, 3:20}
-_famB = {17:12, 18:12, 19:12, 20:12, 21:12, 22:8,  23:8,  0:16, 1:16, 2:16, 3:16}
-_famC = {17:21, 18:21, 19:21, 20:21, 21:15, 22:15, 23:15, 0:15, 1:15, 2:15, 3:15}
+_famA = {17:15, 18:15, 19:15, 20:15, 21:15, 22:15, 23:20, 24:20, 25:20, 26:20, 27:20}
+_famB = {17:12, 18:12, 19:12, 20:12, 21:12, 22:8,  23:8,  24:16, 25:16, 26:16, 27:16}
+_famC = {17:21, 18:21, 19:21, 20:21, 21:15, 22:15, 23:15, 24:15, 25:15, 26:15, 27:15}
 _famDict = {'A':_famA, 'B':_famB, 'C':_famC}
 
 class BabySitterTime:
-    _shiftFamily = ''
+    _shiftFamily = None
     _startTime = None
     _endTime = None
     def __init__(self):
         self._startTime = 0
         self._endTime = 0
+        self._shiftFamily = ''
+
+    def CalculateInvoice(self):
+        shiftValue = 0
+        start = self._startTime if self._startTime>=3 else (self._startTime +24)
+        end = self._endTime if self._endTime >= 4 else (self._endTime + 24)
+        if self.ValidShift and self._shiftFamily in _famDict.keys():
+            for index in xrange(start, end):
+                shiftValue += _famDict[self._shiftFamily][index]
+        return shiftValue
 
     def SetFamily(self, fam):
         if fam not in _famDict.keys():
