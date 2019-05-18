@@ -28,22 +28,22 @@ class BabySitterTime:
             return True
         elif input >= 0 and input <= endRange:
             return True
-        else:
-            return False
+        #else
+        return False
 
     def StartTime(self, inputTime):
         if self._checkTime(17, 3, inputTime):
             self._startTime = inputTime
             return True
-        else:
-            return False
+        #else
+        return False
 
     def EndTime(self, inputTime):
         if self._checkTime(18, 4, inputTime):
             self._endTime = inputTime
             return True
-        else:
-            return False
+        #else
+        return False
 
     def CreateShift(self, start, end):
         if not self.StartTime(start) or not self.EndTime(end):
@@ -53,12 +53,12 @@ class BabySitterTime:
     #allowing for input to be put in a try block in application.
 
     def ValidShift(self):
-        start = 0
-        end = 0
-        if self._startTime <4:
-            start = self._startTime + 24
-        if self._endTime <5:
-            end = self._endTime +24
+        start = self._startTime
+        end = self._endTime
+        if start < 4:
+            start += 24
+        if end < 5:
+            end += 24
         return start < end
 
 def main():
